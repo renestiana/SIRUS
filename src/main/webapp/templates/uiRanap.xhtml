@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+    xmlns:pm="http://primefaces.org/mobile">
+
+<f:view contentType="text/html">
+
+	<h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>Ranap17 - APP</title>
+            <link rel="shortcut icon" type="image/png" href="#{request.contextPath}/resources/images/favicon.png" />
+        </f:facet>
+        
+        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/default.css" />
+        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/syntaxhighlighter/syntaxhighlighter.css" />
+        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/font-awesome.min.css" />
+	<ui:insert name="head"></ui:insert>
+        
+        <script type="text/javascript">
+            $(function() {$('.sidebar a').hover(function() {$(this).toggleClass('ui-state-hover');})});
+        </script>
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12200033-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+          </script>
+	</h:head>
+
+	<h:body>
+
+		<div id="header" class="ui-widget ui-widget-header">
+			<div id="logo">
+				<img src="#{request.contextPath}/images/logo.png" alt="Logo"/>
+			</div>
+            
+            <div id="menu" class="ui-widget">
+                <ul id="main">
+                    <li class="current_page_item"><a href="#{request.contextPath}/ui/home.jsf" style="background:url('../design/ui.png') no-repeat center left;">Components</a></li>
+                    <li><a href="#{request.contextPath}/mobile/index.jsf" style="background:url('../design/iphone.png') no-repeat center left">Mobile</a></li>
+                    <li><a href="#{request.contextPath}/push/index.jsf" style="background:url('../design/push.png') no-repeat center left">Push</a></li>
+                    <li><a href="http://www.primefaces.org/showcase-ext" style="background:url('../design/extensions.png') no-repeat center left">Extensions</a></li>
+                    <li class="current_page_item"><a href="#{request.contextPath}/ui/macosx.jsf" style="background:url('../design/mac.png') no-repeat center left;">Mock OS X</a></li>
+                </ul>
+            </div>
+            
+            <div id="globalthemeswitcher">
+                <h:form>
+                    <p:themeSwitcher value="#{themeSwitcherBean.theme}" style="width:175px;" effect="fade" var="t">
+                        <f:selectItem itemLabel="Choose Theme" itemValue="" />
+                        <f:selectItems value="#{themeSwitcherBean.advancedThemes}" var="theme" itemLabel="#{theme.name}" itemValue="#{theme}"/>
+                        <p:ajax listener="#{themeSwitcherBean.saveTheme}" />
+                        
+                        <p:column>
+                            <h:graphicImage name="images/themes/#{t.image}" />
+                        </p:column>
+                        
+                        <p:column>
+                            #{t.name}
+                        </p:column>
+                    </p:themeSwitcher>
+                </h:form>
+            </div>
+		</div>
+
+        
+            
+            
+            <div id="page" class="ui-widget">
+                <div id="sidebar" class="ui-widget-content ui-corner-bottom ui-helper-clearfix ui-shadow">            
+                    <h:form>
+                        <p:panelMenu> 
+                            <p:submenu label="PENDATAAN" >                                 
+                                 <p:menuitem value="DATA TINDAKAN"  icon="fa fa-newspaper-o"/>
+                                 <p:menuitem value="PEMAKAIAN ALKES" icon="fa fa-newspaper-o" />
+                                 <p:separator/>
+                                 <p:menuitem value="PASIEN MASUK" icon="fa fa-mail-forward" outcome="pasmasuk/new" />
+                                 <p:menuitem value="PASIEN KELUAR" icon="fa fa-reply"/>
+                                 <p:separator />
+                                 <p:menuitem value="DATA PASIEN" icon="fa fa-address-book"/>                        
+                             </p:submenu>
+                             <p:submenu label="LAPORAN">                        
+                             </p:submenu>
+                             <p:submenu label="UTILITY">
+
+                             </p:submenu>
+                        </p:panelMenu>
+                    </h:form>    
+                </div>
+                <div id="content">
+                    <div class="post">
+                        <ui:insert name="content">...</ui:insert>
+                    </div>
+                </div>
+
+                <div style="clear: both;"></div>
+            
+            </div>
+                        
+        
+        <script language="javascript" src="#{request.contextPath}/syntaxhighlighter/scripts/sh.js"></script>
+        <script language="javascript">
+            SyntaxHighlighter.all();
+        </script>
+
+	</h:body>
+
+	
+</f:view>
+</html>

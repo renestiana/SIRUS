@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.bitrisoft.ranap17</groupId>
+  <artifactId>Ranap17</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20170129035800</lastUpdated>
+  </versioning>
+</metadata>

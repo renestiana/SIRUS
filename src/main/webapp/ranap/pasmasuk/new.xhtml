@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="../../templates/uiRanap.xhtml">
+    
+    
+	<ui:define name="content">
+            <h1 class="title ui-widget-header ui-corner-all">PASIEN MASUK</h1>
+            <div class="entry">
+                <h:form>
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:tabView>
+                        <p:tab title="General">
+                            <p:fieldset legend="Basic" style="margin-bottom:20px">
+                                <h:panelGrid columns="3" cellpadding="10">
+                                    <h:outputText value="RUANG/LANTAI"/>
+                                    <h:outputText value=":"/>
+                                    <h:inputText value="" id="ruang" size="5"/>
+                                    
+                                    <h:outputText value="NOMOR BILL / NOMOR RM"/>
+                                    <h:outputText value=":"/>
+                                    <h:inputText value="" id="nobill" size="10"/>
+                                </h:panelGrid>                            
+                            </p:fieldset>                            
+                        </p:tab>
+                    </p:tabView>
+                    <div style="clear:both" />
+                </h:form>
+            </div>
+
+	</ui:define>
+</ui:composition>

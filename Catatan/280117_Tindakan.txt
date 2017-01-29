@@ -1,0 +1,9 @@
+kodetarif
+transtindakan
+pendaftaran
+kelasperawatan
+kamar
+FakturByr
+
+Pasien Masuk & Data Tindakan akan melakukan 
+pengecekan No bill terhadap table FakturByr
